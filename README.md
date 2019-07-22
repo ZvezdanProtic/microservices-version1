@@ -1,2 +1,2 @@
 # microservices-version1
-First version of microservices
+Repository for the first version of the microservices files related to the microservices blog
