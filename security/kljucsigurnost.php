@@ -1,6 +1,6 @@
 <?php
 
-$keylocation = "C:/xampp/htdocs/microservicesv1/security/";
+$keylocation = __DIR__;
 
 function encryptData($plaintext, $keyyear, $keylocation)
 {
@@ -23,7 +23,7 @@ function generateKey($opensslConfigPath = NULL, $keyyear, $keylocation)
 {
 	if ($opensslConfigPath == NULL)
 	{
-		$opensslConfigPath = "D:/software/xampp/htdocs/acconsole/security/openssl.cnf";
+		$opensslConfigPath = $keylocation."/openssl.cnf";
 	}
 	$config = array(
 		"config" => $opensslConfigPath,
@@ -42,8 +42,8 @@ function generateKey($opensslConfigPath = NULL, $keyyear, $keylocation)
 
 	$pubKey = $pubKey["key"];
 
-	file_put_contents($keylocation."pblc".$keyyear.".pem", $pubKey);
-	file_put_contents($keylocation."prvt".$keyyear.".pem", $privKey);
+	file_put_contents($keylocation."/pblc".$keyyear.".pem", $pubKey);
+	file_put_contents($keylocation."/prvt".$keyyear.".pem", $privKey);
 	
 }
 

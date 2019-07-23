@@ -1,6 +1,6 @@
 <?php
 
-	require_once 'security/kljucsigurnost.php';
+	require_once 'kljucsigurnost.php';
 	
 	generateKey(NULL, 2019, $keylocation);
 	
